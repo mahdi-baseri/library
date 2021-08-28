@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'danst';
+    src: url(../fonts/danstevis.otf);
+}
+body{
+    font-family: 'danst' !important;
+    background-color: #fff;
+    background-image: url("../img/R (1).jfif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px;
+}
+form{
+    width: 40%;
+    margin: 0 auto;
+}
+input{
+    border: 1px solid gray !important;
+    box-shadow:  0 0 20px rgba(255, 99, 71, 0.671);
+}
+label{
+    color: black;
+    text-shadow: 3px 3px 2px chartreuse;
+}

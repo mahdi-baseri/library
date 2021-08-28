@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ثبت دانشجو</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+
+<body dir="rtl">
+<div class="container-fluid h-100">
+    <div class="h-100 row">
+        <div class="row h-100" >
+            <div class="d-flex flex-column bg-warning text-center col-2 p-4">
+                <a href="dashboard.php"><h4 class="my-2">داشبورد</h4></a>
+                <div class="dropdown-divider"></div>
+                <a href="php/all-students.php"><h4 class="my-2">ثبت دانشجو</h4></a>
+                <a href="php/all-workers.php"><h4 class="my-2">ثبت کارمند</h4></a>
+                <a href="php/all-books.php"><h4 class="my-2">ثبت کتاب</h4></a>
+                <div class="dropdown-divider"></div>
+                <a href="#"><h4 class="my-2">جستجو دانشجو</h4></a>
+                <a href="#"><h4 class="my-2">جستجو کتاب</h4></a>
+                <a href="#"><h4 class="my-2">جستجو کارمند</h4></a>
+            </div>
+            <div class="bg-wite col-10">
+                <div class="container-fluid">
+                    <form action="php/book.php" name="login-form" onsubmit="return validation()" method="POST">
+                        <div class="row">
+                            <div class="d-flex flex-column col-md-6" id="label-parent" dir="rtl">
+                                <label  for="title" class="my-2 text-center"><b id="l-title"></b></label>
+                                <input class="form-control p-2 my-2" id="title" name="title" type="text" placeholder="عنوان">
+                                <label  for="writer" class="my-2 text-center"><b id="l-writer"></b></label>
+                                <input class="form-control p-2 my-2" id="writer" name="writer" type="text" placeholder="نویسنده">
+                            </div>
+                            <div class="col-md-6 d-flex flex-column">
+                                <label  for="subject" class="my-2 text-center"><b id="l-subject"></b></label>
+                                <input class="form-control p-2 my-2" id="subject" name="subject" type="text" placeholder="موضوع">
+                                <label  for="publisher" class="my-2 text-center"><b id="l-publisher"></b></label>
+                                <input class="form-control p-2 my-2" id="publisher" name="publisher" type="text" placeholder="ناشر">
+                            </div>
+                        </div>
+                   
+                        <div class="row d-flex justify-content-center mt-3 mx-1">
+                            <button class="btn btn-success col-md-2 mx-2 my-2 h-100" type="submit">ثبت</button>
+                            <a href="dashboard.html" class="btn btn-danger col-md-2 mx-2 h-100 my-2">انصراف</a>
+
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="bootstrap/bootstrap.js"></script>
+<script src="js/book.js"></script>
+<script src="js/all.min.js"></script>
+
+</body>
+</html>
