@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,52 +8,81 @@
     <link rel='stylesheet' type='text/css' media='screen' href='assest/css/index.css'>
     <link rel="stylesheet" href="assest/bootstrap/bootstrap.css">
 </head>
-<body>
-    <div class="container">
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="d-flex flex-column text-center">
-            <label class="" for="username"><h3> نام کاربری </h3></label>
-            <input type="text" id="username" name="username" class="form-control">
-            <label for="password"><h3>رمز ورود</h3></label>
-            <input type="text" id="password" name="password" class="form-control">
-            <button type="submit" class="btn btn-success mx-auto px-4 py-1 m-3">ورود</button>
-        </form>
+<body dir="rtl">
+    <div class="container-fluid">
+        <!-- start header -->
+        <?php
+        include "cms/includes/header.php"
+        ?>
+        <!-- end header -->
+
+        <!-- start main -->
+        <div class="container">
+            <!-- <div class="d-flex">
+
+            <div class="bg-brown text-label">
+                <h4 class="creem my-auto">کتاب های جدید</h4>
+            </div>
+            <div class="row justify-content-around ">
+                <div class="card col-md-3 p-3 bg-transparent">
+                    <img src="assest/img/shazde.jfif" alt="">
+                    <div class="card-body">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link brown stretched-link">عنوان</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link brown">عنوان</a>
+                            </li>
+
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="card col-md-3">
+                    <img src="assest/img/shazde.jfif" alt="">
+                    <div class="card-body">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">عنوان</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">عنوان</a>
+                            </li>
+
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="card col-md-3">
+                    <img src="assest/img/shazde.jfif" alt="">
+                    <div class="card-body">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">عنوان</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">عنوان</a>
+                            </li>
+
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        </div>
+        <!-- end main -->
     </div>
+  
     
 
 
-    <script src='assest/js/index.js'></script>
     <script src="assest/bootstrap/bootstrap.js"></script>
     <script src="assest/js/all.min.js"></script>
-
-    <?php
-    $conn = mysqli_connect('localhost' , 'root' , '' , 'library');
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $password = $_POST['password'];
-        $username = $_POST['username'];
-        $sql = mysqli_query($conn, "SELECT `username` , `password` FROM `admin` WHERE `username` = '$username'");
-        $result = mysqli_fetch_assoc($sql);
-        if ($username !== '' && $password !== '') {
-            if (mysqli_num_rows($sql) > 0) {
-                if ($username == $result['username'] && $password == $result['password']) {
-                    header("location: http://localhost/library/assest/php/dashboard.php");
-                } else {
-                    echo '<script language="javascript">';
-                    echo 'alert("اطلاعات وارد شده نادرست است")';  //not showing an alert box.
-                    echo '</script>';
-                    exit;
-                }
-            }else {
-                echo '<script language="javascript">';
-                echo 'alert("اطلاعات وارد شده نادرست است")';  //not showing an alert box.
-                echo '</script>';
-                exit;
-            }
-        } else {
-            echo "<div class='bg-danger text-white text-center p-2 mx-auto' style='width: 40%; border-radius: 25px'><h4 class='my-auto'>لطفا اطلاعات را کامل کنید</h4></div>";
-        }
-    }
-
-
-    ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assest/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>
